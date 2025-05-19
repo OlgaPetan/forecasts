@@ -149,7 +149,7 @@ if run_forecast:
         coefs = []
         for _ in range(n_bootstraps):
             X_resampled, Y_resampled = resample(X, Y)
-            model = model_cls()
+            model = _model_cls()
             model.fit(X_resampled, Y_resampled)
             coefs.append([est.coef_ for est in model.estimators_])
 
