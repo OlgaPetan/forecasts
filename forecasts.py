@@ -14,7 +14,7 @@ st.title("📈 6-Month Forecasting App (Linear Regression)")
 # ----------------------------
 # Load local Excel file
 # ----------------------------
-@st.cache
+@st.cache_data
 def load_data():
     df = pd.read_excel('data.xlsx')
     df = df.fillna(0)
@@ -144,7 +144,7 @@ if run_forecast:
     # ----------------------------
     # Bootstrapped Coefficients
     # ----------------------------
-    @st.cache
+    @st.cache_data
     def bootstrap_confidence_intervals(X, Y, model_cls, n_bootstraps=500, alpha=0.05):
         coefs = []
         for _ in range(n_bootstraps):
