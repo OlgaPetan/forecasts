@@ -145,7 +145,7 @@ if run_forecast:
     # Bootstrapped Coefficients
     # ----------------------------
     @st.cache_data
-    def bootstrap_confidence_intervals(X, Y, model_cls, n_bootstraps=500, alpha=0.05):
+    def bootstrap_confidence_intervals(X, Y, _model_cls, n_bootstraps=500, alpha=0.05):
         coefs = []
         for _ in range(n_bootstraps):
             X_resampled, Y_resampled = resample(X, Y)
