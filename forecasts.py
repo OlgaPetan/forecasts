@@ -15,7 +15,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 # ----------------------------
 # Load default or user data
 # ----------------------------
-@st.cache
+@st.cache_data
 def load_default_data():
     df = pd.read_excel('data.xlsx')
     df = df.fillna(0)
